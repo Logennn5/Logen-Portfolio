@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logen Palanivel | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#home">MyPortfolio<span>.</span></a>
+    <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav id="navigation" class="navigation" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="themeButton" class="theme-button" type="button">Dark mode</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-text">
+        <p class="eyebrow">HELLO, WELCOME TO MY WEBSITE</p>
+        <h1>Hi, I'm <span>Logen Palanivel</span></h1>
+        <h2>A Computer Science Student</h2>
+        <p>I am interested in technology, programming, and creating useful digital solutions. This website shares my background, skills, and projects.</p>
+        <a class="button" href="#projects">View My Projects</a>
+      </div>
+      <div class="profile-circle" role="img" aria-label="Placeholder for your profile photo">LP</div>
+    </section>
+
+    <section id="about" class="section">
+      <p class="eyebrow">GET TO KNOW ME</p>
+      <h2 class="section-title">About Me</h2>
+      <div class="about-card">
+        <p>Hello! I'm a Computer Science student who enjoys learning about software, computers, and problem-solving. I am working to improve my technical skills through coursework and personal projects.</p>
+        <h3>My Skills</h3>
+        <div class="skills">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Java</span><span>Database Basics</span><span>Problem Solving</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-alt">
+      <p class="eyebrow">WHAT I'VE WORKED ON</p>
+      <h2 class="section-title">My Projects</h2>
+      <p class="section-intro">Here are five projects that I have worked on at UNIMAS.</p>
+      <div class="project-grid">
+        <article class="project-card"><span class="project-number">01</span><h3>Portfolio Website</h3><p>A personal website built with HTML, CSS, and JavaScript to introduce myself and display my work.</p></article>
+        <article class="project-card"><span class="project-number">02</span><h3>Java GUI Application</h3><p>A simple Java graphical interface created to practise programming logic and user interaction.</p></article>
+        <article class="project-card"><span class="project-number">03</span><h3>Tic-Tac-Toe Game</h3><p>A small game project that uses conditions and checks to decide whether a player has won.</p></article>
+        <article class="project-card"><span class="project-number">04</span><h3>Database Design</h3><p>A database coursework task involving tables, relationships, and entity relationship diagrams.</p></article>
+        <article class="project-card"><span class="project-number">05</span><h3>Word Count Program</h3><p>A Java program that reads text from a file and counts how often each word appears.</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <p class="eyebrow">LET'S CONNECT</p>
+      <h2 class="section-title">Contact Me</h2>
+      <p class="section-intro">Have a question or want to connect? Send me a message below.</p>
+      <form id="contactForm" class="contact-form">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" placeholder="Enter your name" required>
+        <label for="email">Your email</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Write your message" required></textarea>
+        <button class="button" type="submit">Check Message</button>
+        <p id="formMessage" class="form-message" role="status"></p>
+      </form>
+      <p class="email-line">Or email me at: <a href="mailto:lpalanivel2002@gmail.com">lpalanivel2002@gmail.com</a></p>
+    </section>
+  </main>
+
+  <button id="topButton" class="top-button" type="button" aria-label="Back to top">↑</button>
+  <footer><p>© <span id="year"></span> Logen Palanivel. Made with HTML, CSS, and JavaScript.</p></footer>
+  <script src="script.js"></script>
+</body>
+</html>
