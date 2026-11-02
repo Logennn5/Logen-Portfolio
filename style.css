@@ -823,6 +823,9 @@ body {
 /* ==========================================================================
    Hero Profile Portrait Integration
    ========================================================================== */
+/* ==========================================================================
+   Hero Profile Passport Portrait Integration
+   ========================================================================== */
 .hero-card {
   display: flex;
   flex-direction: column;
@@ -839,19 +842,28 @@ body {
 
 .hero-profile-photo {
   width: 100%;
-  max-width: 320px; /* Constraints bounds to ensure sharp visibility */
+  max-width: 220px; /* Sized specifically to match standard physical passport dimensions on a web page */
   height: auto;
-  aspect-ratio: 1 / 1; /* Circular aspect ratio */
-  object-fit: cover; /* Ensures focus stays correctly centered on your face */
-  border-radius: 50%; /* Converts photo into a premium circular design */
-  border: 4px solid var(--accent); /* Framed with your primary theme color */
-  box-shadow: var(--shadow-lg); /* Sleek shadow depth */
+  aspect-ratio: 35 / 45; /* True to passport proportions (e.g., 35mm x 45mm) */
+  object-fit: cover; /* Keeps you centered nicely without skewing */
+  
+  /* Passport Frame Styling */
+  border-radius: 2px; /* Nearly square, classic cut */
+  border: 8px solid #ffffff; /* Heavy white passport edge/border */
+  outline: 1px solid var(--border-color); /* Fine outline for separation from backgrounds */
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.1), /* Simulates thin physical photo shadow */
+    0 10px 20px -5px rgba(0, 0, 0, 0.15); /* Modern card elevation */
+  
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 
+/* Natural-themed interactive hover state to raise passport off page */
 .hero-profile-photo:hover {
-  transform: translateY(-4px) scale(1.02); /* Engaging, gentle hover effect */
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px) rotate(1deg); /* Slight paper-like tilt */
+  box-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.12),
+    0 20px 25px -5px rgba(0, 0, 0, 0.25);
 }
 
 /* Responsive adjustment for small tablets and mobile */
@@ -861,6 +873,7 @@ body {
     gap: 1.25rem;
   }
   .hero-profile-photo {
-    max-width: 240px; /* Moderated portrait size for stacked small screens */
+    max-width: 180px; /* Resized downward to respect screen bounds on mobile */
+    border-width: 6px; /* Moderated border for smaller viewports */
   }
 }
