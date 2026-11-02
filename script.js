@@ -7,8 +7,18 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Modal dataset for the 5 projects
+  // Modal dataset for all featured projects
   const projectDetails = [
+    {
+      title: "India Tour: Cinematic Documentary & Photo Study",
+      description: "A comprehensive multimedia project blending field photography and video post-production. Captures architectural landmarks, vibrant street scenes, and travel culture across India.",
+      specs: [
+        "Software & Ingest: DaVinci Resolve (Cut, Edit, Color, and Fairlight workspaces).",
+        "Color Grading: Primary balance adjustments, shot-matching between varied ambient sunlight conditions, and custom contrast curves.",
+        "Audio Engineering: Integrated ambient environmental field recordings with dynamic musical timing and audio ducking.",
+        "Visual Asset Capture: On-location digital photography emphasizing leading lines, frame symmetry, and natural lighting."
+      ]
+    },
     {
       title: "Campus-Wide Secure Enterprise Network Topology",
       description: "A complete multi-departmental network architecture built to prevent unauthorized inter-VLAN access, spoofing, and broadcast storms across large academic buildings.",
@@ -139,9 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const typewriterEl = document.getElementById("typewriter");
     const phrases = [
       "Enterprise Network Architecture",
+      "DaVinci Resolve & Digital Media",
       "Cisco IOS & Routing Systems",
-      "Modular Java Development",
-      "Network Server Diagnostics"
+      "Modular Java Development"
     ];
     let phraseIndex = 0;
     let charIndex = 0;
@@ -258,7 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.querySelector(".modal-backdrop").addEventListener("click", closeModal);
     }
 
-    // Keyboard accessibility for modal (ESC key)
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && modal && !modal.hasAttribute("hidden")) {
         closeModal();
@@ -294,7 +303,6 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         let isValid = true;
 
-        // Reset errors
         nameError.textContent = "";
         emailError.textContent = "";
         msgError.textContent = "";
@@ -381,11 +389,9 @@ document.addEventListener("DOMContentLoaded", () => {
      Feature 10: Dynamic Year & Active Scroll Spy
   ------------------------------------------------------------- */
   try {
-    // Dynamic Year
     const yearEl = document.getElementById("current-year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Scroll Spy for Persistent Header
     const sections = document.querySelectorAll("main section");
     const navItems = document.querySelectorAll(".nav-link");
 
