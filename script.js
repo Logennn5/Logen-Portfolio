@@ -1,3 +1,5 @@
+
+
 /**
  * Personal Portfolio Resume Application
  * Authored in pure Vanilla JavaScript (ES6+)
