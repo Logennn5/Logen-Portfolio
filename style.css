@@ -62,11 +62,13 @@ body {
   flex-direction: column;
 }
 
+/* Focus Indicator for Keyboard Navigation */
 :focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 
+/* Skip link for screen readers */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -84,6 +86,7 @@ body {
   top: 1rem;
 }
 
+/* Scroll Progress Bar */
 #scroll-progress {
   position: fixed;
   top: 0;
@@ -95,6 +98,7 @@ body {
   transition: width 0.1s linear;
 }
 
+/* Layout Utilities */
 .container {
   width: 90%;
   max-width: 1120px;
@@ -120,6 +124,7 @@ body {
   margin-bottom: 2.5rem;
 }
 
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -697,51 +702,125 @@ body {
   width: 100%;
   padding: 0.75rem;
   border-radius: 6px;
-  border
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
 
+.error-msg {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--danger);
+  margin-top: 0.25rem;
+  min-height: 1.1rem;
+}
 
-   /* ==========================================================================
-   Hero Profile Strict Mini Passport Frame
+.counter-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.25rem;
+}
+#char-counter {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.form-status {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  display: none;
+}
+.form-status.success {
+  display: block;
+  background-color: rgba(22, 163, 74, 0.15);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+.form-status.error {
+  display: block;
+  background-color: rgba(220, 38, 38, 0.15);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+/* ==========================================================================
+   Footer
    ========================================================================== */
-.hero-card {
+.site-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  background: var(--bg-surface);
+}
+
+.footer-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  width: 100%;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
-.hero-profile-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 0.5rem;
+.back-to-top {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+.back-to-top:hover {
+  background: var(--border-color);
 }
 
-/* Hard pixel constraints so CSS cannot be overridden */
-.hero-profile-photo {
-  width: 90px !important;
-  height: 115px !important;
-  max-width: 90px !important;
-  object-fit: cover !important;
-  border-radius: 2px !important;
-  border: 3px solid #ffffff !important;
-  outline: 1px solid var(--border-color) !important;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
-  display: block !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.hero-profile-photo:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.22) !important;
-}
-
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
 @media (max-width: 900px) {
-  .hero-profile-photo {
-    width: 80px !important;
-    height: 102px !important;
-    max-width: 80px !important;
+  .hero-grid, .about-grid, .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-menu {
+    position: absolute;
+    top: 4.25rem;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+    display: none;
+  }
+  .nav-menu.open {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .hero-actions {
+    flex-direction: column;
   }
 }
